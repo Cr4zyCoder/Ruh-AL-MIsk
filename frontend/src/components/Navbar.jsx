@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { ShoppingCart, User, Search, Menu, X, Instagram, Facebook, Twitter, LogOut } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
