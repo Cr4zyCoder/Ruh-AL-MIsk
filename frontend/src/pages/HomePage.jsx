@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, X, Check } from 'lucide-react';
-import Hero from './components/Hero';
-import ProductCard from './components/ProductCard';
+import Hero from '../components/Hero';
+import ProductCard from '../components/ProductCard';
 
 const HomePage = () => {
     const [products, setProducts] = useState([]);

@@ -1,4 +1,10 @@
+import React, { useState } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
+import { ChevronLeft, User, Phone, MapPin, Send } from 'lucide-react';
+import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const Checkout = () => {
     const { cartItems, cartTotal, clearCart } = useCart();
