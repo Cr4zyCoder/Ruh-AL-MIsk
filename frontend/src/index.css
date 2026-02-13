@@ -129,23 +129,33 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
 }
 
-.desktop-nav {
+.nav-group-left {
   display: flex;
   align-items: center;
   gap: 3rem;
   flex: 1;
 }
 
-.desktop-nav:last-of-type {
+.nav-group-right {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex: 1;
   justify-content: flex-end;
+}
+
+.desktop-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .logo-container {
   flex: 0 0 auto;
   text-align: center;
+  padding: 0 4rem;
 }
 
 .logo-text {

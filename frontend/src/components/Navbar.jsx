@@ -46,14 +46,14 @@ const Navbar = () => {
                         <Menu size={24} />
                     </button>
 
-                    {/* Desktop Nav - Left */}
-                    <div className="desktop-nav">
+                    {/* Nav Group - Left */}
+                    <div className="nav-group-left">
                         {navLinks.slice(0, 2).map((link) => (
                             <Link key={link.name} to={link.href} className="nav-link">{link.name}</Link>
                         ))}
                     </div>
 
-                    {/* Logo */}
+                    {/* Logo - Absolute Center */}
                     <div className="logo-container">
                         <Link to="/">
                             <motion.h1
@@ -66,30 +66,31 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    {/* Desktop Nav - Right */}
-                    <div className="desktop-nav">
-                        {navLinks.slice(2).map((link) => (
-                            <Link key={link.name} to={link.href} className="nav-link">{link.name}</Link>
-                        ))}
-                    </div>
-
-                    {/* Icons */}
-                    <div className="nav-icons">
-                        <button className="nav-icon-btn"><Search size={20} /></button>
-                        <div className="user-nav" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            {user ? (
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                                    <Link to="/my-orders" className="nav-link" style={{ fontSize: '0.7rem' }}>{user.name.split(' ')[0]}</Link>
-                                    <button onClick={handleLogout} className="nav-icon-btn"><LogOut size={20} /></button>
-                                </div>
-                            ) : (
-                                <Link to="/login" className="nav-icon-btn"><User size={20} /></Link>
-                            )}
+                    {/* Nav Group - Right */}
+                    <div className="nav-group-right">
+                        <div className="desktop-nav-right">
+                            {navLinks.slice(2).map((link) => (
+                                <Link key={link.name} to={link.href} className="nav-link">{link.name}</Link>
+                            ))}
                         </div>
-                        <button onClick={() => setIsCartOpen(true)} className="nav-icon-btn">
-                            <ShoppingCart size={20} />
-                            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
-                        </button>
+
+                        <div className="nav-icons">
+                            <button className="nav-icon-btn"><Search size={20} /></button>
+                            <div className="user-nav" style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                {user ? (
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                        <Link to="/my-orders" className="nav-link" style={{ fontSize: '0.7rem' }}>{user.name.split(' ')[0]}</Link>
+                                        <button onClick={handleLogout} className="nav-icon-btn"><LogOut size={20} /></button>
+                                    </div>
+                                ) : (
+                                    <Link to="/login" className="nav-icon-btn"><User size={20} /></Link>
+                                )}
+                            </div>
+                            <button onClick={() => setIsCartOpen(true)} className="nav-icon-btn">
+                                <ShoppingCart size={20} />
+                                {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
