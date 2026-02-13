@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@200;300;400;500;600&display=swap');
+
+:root {
+  /* Color Palette - Premium Navy & Gold */
+  --navy-obsidian: #020617;
+  --navy-dark: #000b1a;
+  --navy: #001f3f;
+  --navy-light: #003366;
+
+  --gold-primary: #D4AF37;
+  --gold-light: #f9e29b;
+  --gold-dark: #916b08;
+  --gold-muted: rgba(212, 175, 55, 0.4);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+
+  /* Typography */
+  --font-display: 'Cinzel Decorative', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', sans-serif;
+
+  /* Effects */
+  --glass: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(212, 175, 55, 0.15);
+  --glass-blur: blur(20px);
+
+  --shadow-lux: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.1);
+
+  --transition-lux: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--navy-obsidian);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+.italic-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-spacing {
+  padding: 10rem 0;
+}
+
+/* --- Premium Components --- */
+
+/* Gold Shimmer Effect */
+.shimmer-text {
+  background: linear-gradient(90deg,
+      var(--gold-dark) 25%,
+      var(--gold-light) 50%,
+      var(--gold-dark) 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s infinite linear;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lux);
+}
+
+/* --- Navbar Upgrade --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 2.5rem 0;
+  transition: var(--transition-lux);
+}
+
+.navbar.scrolled {
+  padding: 1.2rem 0;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-link {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  transition: var(--transition-lux);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-primary);
+  transition: var(--transition-lux);
+}
+
+.nav-link:hover {
+  color: var(--gold-primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* --- Hero Section Upgrade --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--navy-light) 0%, var(--navy-obsidian) 100%);
+  z-index: -2;
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/black-linen-2.png');
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vh;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+/* --- Buttons --- */
+.btn-lux {
+  position: relative;
+  padding: 1.5rem 3.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy-obsidian);
+  background: var(--gold-primary);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition-lux);
+}
+
+.btn-lux:hover {
+  background: var(--gold-light);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+}
+
+.btn-outline-lux {
+  padding: 1.5rem 3.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition-lux);
+}
+
+.btn-outline-lux:hover {
+  border-color: var(--gold-primary);
+  background: rgba(212, 175, 55, 0.05);
+  transform: translateY(-5px);
+}
+
+/* --- Product Cards Upgrade --- */
+.product-card-lux {
+  position: relative;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-lux);
+}
+
+.product-card-lux::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: var(--transition-lux);
+  z-index: 10;
+}
+
+.product-card-lux:hover {
+  transform: translateY(-15px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.product-card-lux:hover::before {
+  border-color: var(--gold-muted);
+  inset: -10px;
+}
+
+.product-img-wrapper {
+  position: relative;
+  aspect-ratio: 1 / 1.2;
+  overflow: hidden;
+}
+
+.product-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-card-lux:hover .product-img-wrapper img {
+  transform: scale(1.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-muted);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
