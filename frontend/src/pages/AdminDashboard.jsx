@@ -49,10 +49,10 @@ const AdminDashboard = () => {
                         <h1 className="shimmer-text" style={{ fontSize: '3rem', marginTop: '0.5rem' }}>Management Console</h1>
                     </div>
                     <div style={{ display: 'flex', gap: '2rem' }}>
-                        <Link to="/admin/analytics" className="btn-lux" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem 2.5rem', background: 'transparent', border: '1px solid var(--gold-muted)' }}>
+                        <Link to="/admin/analytics" className="btn-lux" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem 2.5rem', background: 'transparent', border: '1px solid var(--gold-muted)', color: 'var(--gold-primary)' }}>
                             Store Intelligence
                         </Link>
-                        <Link to="/admin/orders" className="btn-lux" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem 2.5rem', background: 'transparent', border: '1px solid var(--gold-muted)' }}>
+                        <Link to="/admin/orders" className="btn-lux" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem 2.5rem', background: 'transparent', border: '1px solid var(--gold-muted)', color: 'var(--gold-primary)' }}>
                             View Acquisitions
                         </Link>
                         <Link to="/admin/product/new" className="btn-lux" style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.2rem 2.5rem' }}>
@@ -68,7 +68,7 @@ const AdminDashboard = () => {
                         type="text"
                         placeholder="Search collection by name or family..."
                         className="lux-input"
-                        style={{ border: 'none', background: 'transparent', padding: '0.5rem' }}
+                        style={{ border: 'none', background: 'transparent', padding: '0.5rem', flex: 1, width: '100%' }}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -112,7 +112,7 @@ const AdminDashboard = () => {
                                                 </div>
                                             </td>
                                             <td style={{ padding: '1.5rem 2rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{product.category}</td>
-                                            <td style={{ padding: '1.5rem 2rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{product.stock} Units</td>
+                                            <td style={{ padding: '1.5rem 2rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{product.totalStock || 0} Units</td>
                                             <td style={{ padding: '1.5rem 2rem' }}>
                                                 <span style={{
                                                     padding: '0.4rem 1rem',

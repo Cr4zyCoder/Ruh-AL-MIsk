@@ -100,6 +100,34 @@ h4 {
   }
 }
 
+.gold-text {
+  color: var(--gold-primary);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.lux-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  padding: 1.2rem 1.5rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: var(--transition-lux);
+}
+
+.lux-input:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
 /* Glassmorphism */
 .glass-panel {
   background: var(--glass);
