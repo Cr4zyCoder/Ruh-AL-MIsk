@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ShoppingCart, Star, Clock, Wind, ChevronDown } from 'lucide-react';
 import { useCart } from '../context/CartContext';

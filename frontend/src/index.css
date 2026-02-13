@@ -419,7 +419,9 @@ h4 {
 
 /* Mobile Adaptations */
 @media (max-width: 1024px) {
-  .desktop-nav {
+
+  .nav-group-left,
+  .nav-group-right {
     display: none;
   }
 
@@ -431,14 +433,16 @@ h4 {
 
   .nav-icons {
     flex: 1;
+    justify-content: flex-end;
   }
 
   .logo-container {
     flex: 2;
+    padding: 0 1rem;
   }
 
   .logo-text {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
